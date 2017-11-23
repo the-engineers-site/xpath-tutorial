@@ -1,0 +1,79 @@
+<div class="panel panel-default panel-info">
+    <div class="panel-heading">Function text() <a href ng-click="goToHome()" class = "pull-right">Home</a></div>
+    <div class="panel-body">
+        <div class="col-lg-3">
+            <h3 class="lead text-primary">Step</h3>
+            <h4 id='guide'>{{getCurrentStep()}} of {{lastStep}}</h4>
+            <h4>Function text()</h4>
+            <br/>
+
+            <p>
+                <b class="text-bold-blue">text() = 'text value'</b> selects all text node children of the context node having the text equal to 'text value'
+                <br/><br/>
+
+                <b class="text-view">Example:</b><br/><br/>
+
+                <b class="text-view">elem[text() = 'My text']</b> - all elements <b>elem</b> that have the text <b class="text-bold-black">My text</b>
+
+                <br><br><br>Use <b  class="text-bold-blue">text()</b> function to select in the <b class="text-bold-black">current context</b>
+                the <b  class="text-bold-blue">input</b> element that:
+                <br> - is under a <b class="text-bold-blue">div</b> with <b class="text-bold-blue">id</b> equal to <b class="text-bold-blue">'forMother'</b>
+                <br> - its direct parent is an element <b class="text-bold-blue">label</b> that has the text equal to <br><b class="text-bold-blue">' Send card'</b>
+            </p>
+        </div>
+
+        <div class="col-lg-4 col-lg-offset-1">
+            <h3 class="lead text-primary"> Html source </h3>
+
+            <div id="output" html-visualizer expected-selection="expectedXpath" current-selection="xpath"
+                 is-match="match" source="{{htmlSourceId}}"></div>
+
+            <p class="text-purple">Scroll if necessary to see what you've selected!</p>
+
+            <div class="form-group" id="xpath-form">
+                <label>Type the xpath here:</label>
+                <input type="text" class="form-control long-input " ng-model="xpath" ng-class="validateXpath()"
+                       placeholder="Enter the xpath"/>
+            </div>
+
+            <p></p>
+
+            <div class="match" ng-show="match">Good job!</div>
+
+        </div>
+
+        <div class="col-lg-3 col-lg-offset-1">
+            <h3 class="lead text-primary"> Html view </h3>
+
+            <div id="test-example">
+
+                <label>Mother:</label>
+                <div class="form-group" id="forMother">
+                    <label>Name<input type="text" class="form-control" placeholder="Enter name"></label>
+                    <label>Address<input type="text" class="form-control" placeholder="Enter address"></label>
+                    <br/>
+                    <label class = "col-lg-12"><input type="checkbox"> Send card</label>
+                    <label class = "col-lg-12"><input type="checkbox"> Buy present</label>
+                </div>
+
+                <br><br><br>
+
+                <label>Father:</label>
+                <div class="form-group" id="forFather">
+                    <label>Name<input type="text" class="form-control" placeholder="Enter name"></label>
+                    <label>Address<input type="text" class="form-control" placeholder="Enter address"></label>
+                    <br>
+                    <label class = "col-lg-12"><input type="checkbox"> Sent card</label>
+                    <label class = "col-lg-12"><input type="checkbox"> Buy present</label>
+
+                </div>
+            </div>
+
+            <br><br><br>
+
+            <p class="text-view">Write an xpath to select the highlighted objects in the form:
+            <p  class="text-view-line-short">the <b>checkbox</b> corresponding to the label <b> Send card </b> under the <b>Mother:</b> section</p>
+            </p>
+        </div>
+    </div>
+</div>

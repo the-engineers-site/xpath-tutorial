@@ -1,0 +1,50 @@
+[
+    {
+        "expression": "./ ",
+        "description": "refers to the current context, only one level deep in the hierarchy"
+    },
+    {
+        "expression": ".//",
+        "description": "refers to the current context, zero or more levels in the hierarchy"
+    },
+    {
+        "expression": "/",
+        "description": "indicates a search that includes only one level of hierarchy"
+    },
+    {
+        "expression": "//",
+        "description": "indicates a search that can include zero or more levels of hierarchy"
+    },
+    {
+        "expression": "*",
+        "description": "matches any element node"
+    },
+    {
+        "expression": "[...]",
+        "description": "syntax for a predicate. It is used to restrict a node-set to select only those nodes for which some condition, an expression converted to boolean, is true. "
+    },
+    {
+        "expression": "contains(string1, string2)",
+        "description": "returns true if string1 contains string2, otherwise it returns false. "
+    },
+    {
+        "expression": "not(args)",
+        "description": "returns true if the boolean value is false, and false if the boolean value is true. The argument args is first reduced to a boolean value."
+    },
+    {
+        "expression": "and",
+        "description": "logical operator used when there are two conditions that should be filled for an element"
+    },
+    {
+        "expression": "or",
+        "description": "logical operator used when from two conditions at least one should be filled"
+    },
+    {
+        "expression": "text() = 'text value' ",
+        "description": "selects all text node children of the context node having the text equal to 'text value'"
+    },
+    {
+        "expression": "elem[n]",
+        "description": "selects the n'th element elem in the current context. Relative to what you have selected. "
+    }
+]

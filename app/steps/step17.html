@@ -1,0 +1,105 @@
+<div class="panel panel-default panel-info">
+    <div class="panel-heading">Logical operators <a href ng-click="goToHome()" class = "pull-right">Home</a></div>
+    <div class="panel-body">
+        <div class="col-lg-3">
+            <h3 class="lead text-primary">Step</h3>
+            <h4 id='guide'>{{getCurrentStep()}} of {{lastStep}}</h4>
+            <h4>Operator or </h4>
+            <br/>
+
+            <p>
+                <b class="text-bold-blue">or</b> operator is used when from two conditions at least one should be filled
+
+                <br/><br/>
+                <b class="text-view">Example:</b><br/><br/>
+
+                <b class="text-view">elem[child1 or child1]</b> - all elements <b>elem</b> that have at least either a child node <b class="text-bold-black">child1</b> or a child node
+                <b class="text-bold-black">child2</b>
+
+                <br><br><br>Use <b  class="text-bold-blue">or</b> operator to select in the <b class="text-bold-black">current context</b>
+                the <b  class="text-bold-blue">input</b> element that:
+                <br> - is under <b class="text-bold-blue">div</b> parent with <b class="text-bold-blue">id</b> equal to <b class="text-bold-blue">'forName'</b>
+                <br> - has the attribute <b class="text-bold-blue">type</b> equal to <b class="text-bold-blue">'text'</b>
+                <br> - has the attribute <b class="text-bold-blue">class</b> containing either value <b class="text-bold-blue">'first'</b> or the
+                value <b class="text-bold-blue">'last'</b>.
+            </p>
+        </div>
+
+        <div class="col-lg-4 col-lg-offset-1">
+            <h3 class="lead text-primary"> Html source </h3>
+
+            <div id="output" html-visualizer expected-selection="expectedXpath" current-selection="xpath"
+                 is-match="match" source="{{htmlSourceId}}"></div>
+
+            <p class="text-purple">Scroll if necessary to see what you've selected!</p>
+
+            <div class="form-group" id="xpath-form">
+                <label>Type the xpath here:</label>
+                <input type="text" class="form-control long-input " ng-model="xpath" ng-class="validateXpath()"
+                       placeholder="Enter the xpath"/>
+            </div>
+
+            <p></p>
+
+            <div class="match" ng-show="match">Good job!</div>
+
+        </div>
+
+        <div class="col-lg-3 col-lg-offset-1">
+            <h3 class="lead text-primary"> Html view </h3>
+
+            <div id="test-example">
+
+                <label class='selectMe'> Add your name:</label>
+                <div class="form-group" id="forName">
+                    <label class="enter text">First name
+                        <input type="text" class="form-control first"
+                               placeholder="Enter your first name">
+                    </label>
+                    <label class="enter text">Last name
+                        <input type="text" class="form-control last"
+                               placeholder="Enter your last name">
+                    </label>
+                    <label class="enter text">I'm just for fun
+                        <input type="text" class="form-control"
+                               placeholder="Having lots of fun">
+                    </label>
+                    <br>
+                    <label >
+                        <input type="checkbox" class = 'form-control-feedback'> Add my name in the fun activities database
+                    </label>
+                </div>
+
+                <br>
+
+                <label class = 'selectMe'> Add your address:</label>
+                <div class="form-group" id="forAddress">
+                    <label class="enter text">Home address
+                        <input type="text" class="form-control first"
+                               placeholder="Enter your address">
+                    </label>
+                    <label class="enter text">Company address
+                        <input type="text" class="form-control last"
+                               placeholder="Enter your address">
+                    </label>
+                    <label class="enter text">I'm just for fun
+                        <input type="text" class="form-control"
+                               placeholder="Having lots of fun">
+                    </label>
+                    <br>
+                    <label >
+                        <input type="checkbox" class = 'form-control-feedback'> I agree on receiving notifications for fun activities
+                    </label>
+                </div>
+
+            </div>
+
+            <br><br>
+
+            <p class="text-view">Write an xpath to select the highlighted objects in the form:
+            <p  class="text-view-line-short">the <b>two edit elements </b>in the Add your name: section</p>
+            </p>
+
+        </div>
+    </div>
+</div>

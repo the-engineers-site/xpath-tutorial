@@ -1,0 +1,131 @@
+.ng-hide {
+    display: none;
+}
+
+.header-desc{
+     font-size: 10pt;
+     text-align:left
+ }
+
+.input {
+    width: 300px;
+}
+
+.long-input {
+    /*width: 650px*/
+}
+
+.invalid-xpath {
+    color : red;
+}
+
+#output {
+    max-height: 500px;
+    overflow: auto;
+    border: 1px dashed #000;
+    /*width: 650px*/
+}
+
+.match{
+    color: #2E8B57;
+    font-weight: bold;
+    font-size: 28pt;
+    text-align:center
+}
+
+.text-bold-black{
+    color:#000000;
+    font-weight: bold;
+    font-size: 11pt;
+}
+.text-bold-blue{
+    color:#0066CC;
+    font-weight: bold;
+    font-size: 11pt;
+}
+.text-purple{
+    color: #800080;
+    font-style: italic;
+    text-indent: 12em;
+    font-size: 10pt
+}
+.text-view{
+    color:#0066CC;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 11pt;
+}
+.text-view-black{
+    color:#000000;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 11pt;
+}
+.text-view-line{
+    color:#0066CC;
+    font-style: italic;
+    text-indent: 5em;
+    font-size: 10pt
+}
+.text-view-line-short{
+    color:#0066CC;
+    font-style: italic;
+    text-indent: 3em;
+    font-size: 10pt
+}
+*#test-example [expectedSelect="true"]{
+    background-color: #DCDCDC;
+}
+
+*#test-example [match="true"]{
+    background-color: #2E8B57;
+}
+
+.tag {
+    color: #0066CC;
+    margin-left: 1em;
+    font-weight: bold;
+}
+
+.tag[actualSelect="true"] {
+    background-color:#269abc;
+    color: #ffffff;
+    margin-left: 1em;
+    font-weight: bold;
+}
+
+.tag[expectedSelect="true"]{
+    background-color: #DCDCDC;
+    color: #0066CC;
+    margin-left: 1em;
+    font-weight: bold;
+}
+
+.tag[expectedSelect="true"][actualSelect="true"]{
+    background-color: #2E8B57;
+    color: #ffffff;
+    margin-left: 1em;
+    font-weight: bold;
+}
+
+.text {
+    color: black;
+    margin-left: 1em;
+    font-weight: normal;
+}
+
+.attributes {
+    color: #DB7093;
+    font-weight: normal;
+}
+.align-center{
+    text-align:center
+}
+
+.text-last-step{
+    color: #008000;
+    font-size: 35;
+    font-weight: bold;
+    font-style: italic
+}
+

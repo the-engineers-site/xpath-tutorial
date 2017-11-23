@@ -1,0 +1,80 @@
+<div class="panel panel-default panel-info">
+    <div class="panel-heading">Function not() <a href ng-click="goToHome()" class = "pull-right">Home</a></div>
+    <div class="panel-body">
+        <div class="col-lg-3">
+            <h3 class="lead text-primary">Step</h3>
+            <h4 id='guide'>{{getCurrentStep()}} of {{lastStep}}</h4>
+            <h4>Function not()</h4>
+            <br/>
+
+            <p>
+                <b  class="text-bold-blue">not(args)</b> The argument args is first reduced to a boolean value. Returns true if the boolean value is
+                false, and false if the boolean value is true
+
+                <br/><br/>
+                <b class="text-view">Example:</b><br/><br/>
+
+                <b class="text-view">elem[not(child1)]</b> - all elements <b>elem</b> that do not have a child node <b class="text-bold-black">child1</b>
+
+                <br><br><br>Use <b  class="text-bold-blue">not()</b>, <b  class="text-bold-blue">contains()</b> to select in the <b class="text-bold-black">current context</b>
+                the <b  class="text-bold-blue">label</b> elements that do not have a child node <b class="text-bold-blue">input</b> and the
+                the attribute <b class="text-bold-blue">class</b> does not contain the value <b class="text-bold-blue">inner</b>.
+            </p>
+        </div>
+
+        <div class="col-lg-4 col-lg-offset-1">
+            <h3 class="lead text-primary"> Html source </h3>
+
+            <div id="output" html-visualizer expected-selection="expectedXpath" current-selection="xpath"
+                 is-match="match" source="{{htmlSourceId}}"></div>
+
+            <p class="text-purple">Scroll if necessary to see what you've selected!</p>
+
+            <div class="form-group" id="xpath-form">
+                <label>Type the xpath here:</label>
+                <input type="text" class="form-control long-input " ng-model="xpath" ng-class="validateXpath()"
+                       placeholder="Enter the xpath"/>
+            </div>
+
+            <p></p>
+
+            <div class="match" ng-show="match">Good job!</div>
+
+        </div>
+
+        <div class="col-lg-3 col-lg-offset-1">
+            <h3 class="lead text-primary"> Html view </h3>
+
+            <div id="test-example">
+                <div><label class='selectMe outer first'> Add your name:</label></div>
+
+                <div class="form-group" id="forName">
+                    <label class="selectMe inner first">Name</label>
+                    <input type="text" class="form-control input"
+                           placeholder="Enter your name">
+                </div>
+
+                <div><label class = 'selectMe outer second'> Add your address:</label></div>
+
+                <div class="form-group" id="forAddress">
+                    <label class="selectMe inner second">Address</label>
+                    <input type="text" class="form-control input"
+                           placeholder="Enter your address">
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" id='rememberMe' > Remember me
+                    </label>
+                </div>
+            </div>
+
+            <br><br>
+
+            <p class="text-view">Write an xpath to select the highlighted objects in the form:
+            <p  class="text-view-line-short">the label <b>Add your name:</b></p>
+            <p class="text-view-line-short">the label <b>Add your address:</b></p>
+            </p>
+
+        </div>
+    </div>
+</div>

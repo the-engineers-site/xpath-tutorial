@@ -1,0 +1,112 @@
+<div class="panel panel-default panel-info">
+    <div class="panel-heading">
+        <div>Context <a href ng-click="goToHome()" class = "pull-right">Home</a></div>
+    </div>
+    <div class="panel-body">
+        Before going further, you need to understand the concept of <b class="text-view">context</b>.
+
+        <p>
+            </br>The evaluation of an XPath expression depends on the context against which the expression operates. The
+            <b class="text-view">context</b> consists of <b class="text-view">the node against which the expression is
+            evaluated</b>.
+
+            </br></br>To better appreciate the concept of context, consider a tree containing nodes.
+            </br>Asking for all nodes named X from the root of the tree returns one set of results, while asking for
+            those nodes from a branch in the tree returns a different set of results.
+            <br><br><b class="text-view-black">Thus, the result of an expression depends upon the context against which it
+            executes.</b>
+        </p>
+
+
+        <div class="col-lg-5">
+
+        <p>
+        <br><h4 class="text-primary"> Current context </h4>
+
+        An expression prefixed with a period and forward slash (./) explicitly uses the <b class="text-view-black">current context as the
+        context</b>.
+        </br></br>For example, the following expression refers to all <b>div</b> elements within the current context:
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                ./div
+            </div>
+        </div>
+
+        Note that this is equivalent to the following:
+        <div class="panel panel-default">
+            <div class="panel-body">
+                div
+            </div>
+        </div>
+        </p>
+
+        <p>
+        <br><h4 class="text-primary"> Document root </h4>
+
+        An expression prefixed with a forward slash (/) uses the <b class="text-view-black">root of the document tree as the context</b>.
+        </br></br>For example, the following expression refers to the <b> div </b> element at the root of this document:
+        <div class="panel panel-default">
+            <div class="panel-body">
+                /div
+            </div>
+        </div>
+        </p>
+            </div>
+
+        <div class="col-lg-5 col-lg-offset-1">
+
+            <p>
+                <br><h4 class="text-primary"> Root element </h4>
+
+            An expression that uses a forward slash followed by an asterisk (/*) uses the <b class="text-view-black">root element as the context</b>.
+            </br></br>For example, the following expression finds the root element of the document:
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    /*
+                </div>
+            </div>
+
+            </p>
+
+            <p>
+                <br><h4 class="text-primary"> Recursive descendant </h4>
+
+            An expression that uses the double forward slash (//) indicates a search that can include zero or more levels of hierarchy.
+            When this operator appears at the beginning of the pattern, the <b class="text-view-black">context is relative to the root of the document</b>.
+            </br></br> For example, the following expression refers to all <b>div</b> elements anywhere within the current document
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    //div
+                </div>
+            </div>
+
+            </br><b class="text-view-black">The .// prefix indicates that the context starts at the level in the hierarchy indicated by the current context.</b>
+
+            </p>
+        </div>
+
+
+    </div>
+
+    <br/>
+
+    <p class="align-center">
+        Lets relate the context to our testing framework for a better understanding.
+
+        </br><br/>While writing an xpath that searches an object inside a component, lets take Accordion for example, you need to search that object only in the accordion component and not in the entire document.
+        <br/>Therefore, you will want to write that xpath related to the current context, which is the accordion component. This is why, your xpaths inside the Accordion component will start with ./ or .//
+
+        <br/><br/><b class = "text-view">In our tutorial, the current context is related to a div element that contains the html form that you write the xpath against.</b>
+    </p>
+</div>
+
+
+
+
+
+
+
+
+

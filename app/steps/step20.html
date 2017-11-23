@@ -1,0 +1,72 @@
+<div class="panel panel-default panel-info">
+    <div class="panel-heading">Positions <a href ng-click="goToHome()" class = "pull-right">Home</a></div>
+    <div class="panel-body">
+        <div class="col-lg-3">
+            <h3 class="lead text-primary">Step</h3>
+            <h4 id='guide'>{{getCurrentStep()}} of {{lastStep}}</h4>
+            <h4>Positions</h4>
+            <br/>
+
+            <p>
+                Positions are relative to what you have selected.
+                <b class="text-bold-blue">elem[n]</b> selects the <b>n'th</b> element <b>elem</b> in the current context.
+                <br/><br/>
+
+                <b class="text-view">Example:</b><br/><br/>
+
+                <b class="text-view">div/elem[2]</b> - the second element <b>elem</b> from under the <b>div</b> elements in the current context.
+                All the selected elements will be on the same level: first level under div.  <br><br>
+                <b class="text-view">div//elem[2]</b> - the second element <b>elem</b> from any level under the <b>div</b> elements in the current context.
+                All the selected elements may be on multiple levels under div.
+
+                <br><br><br>Use <b class="text-bold-blue">[2]</b> to select the second element <b class="text-bold-blue">label</b> from the <b class="text-bold-black">first level</b> under
+                the parent <b class="text-bold-blue">div</b> with <b class="text-bold-blue">id</b> equal to <b class="text-bold-blue">'forFather'</b>, in the <b class="text-bold-black">current context</b>
+
+            </p>
+        </div>
+
+        <div class="col-lg-4 col-lg-offset-1">
+            <h3 class="lead text-primary"> Html source </h3>
+
+            <div id="output" html-visualizer expected-selection="expectedXpath" current-selection="xpath"
+                 is-match="match" source="{{htmlSourceId}}"></div>
+
+            <p class="text-purple">Scroll if necessary to see what you've selected!</p>
+
+            <div class="form-group" id="xpath-form">
+                <label>Type the xpath here:</label>
+                <input type="text" class="form-control long-input " ng-model="xpath" ng-class="validateXpath()"
+                       placeholder="Enter the xpath"/>
+            </div>
+
+            <p></p>
+
+            <div class="match" ng-show="match">Good job!</div>
+
+        </div>
+
+        <div class="col-lg-3 col-lg-offset-1">
+            <h3 class="lead text-primary"> Html view </h3>
+
+            <div id="test-example">
+
+                <label>Mother:</label>
+                <div class="form-group" id="forMother">
+                    <label>Name<input type="text" class="form-control" placeholder="Enter name"></label>
+                    <label>Address<input type="text" class="form-control" placeholder="Enter address"></label>
+                </div>
+                <label>Father:</label>
+                <div class="form-group" id="forFather">
+                    <label>Name<input type="text" class="form-control" placeholder="Enter name"></label>
+                    <label>Address<input type="text" class="form-control" placeholder="Enter address"></label>
+                </div>
+            </div>
+
+            <br>
+
+            <p class="text-view">Write an xpath to select the highlighted objects in the form:
+            <p  class="text-view-line-short">the label <b>Address</b> under the <b>Father:</b> section</p>
+            </p>
+        </div>
+    </div>
+</div>

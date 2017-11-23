@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" >
+<head>
+    <meta charset="utf-8">
+    <title>Xpath Tutorial</title>
+
+    <script src="lib/jquery/jquery-1.10.2.js"></script>
+    <script src="lib/jquery/jquery-ui.js"></script>
+    <script src="lib/jquery.xpath.js"></script>
+    <script src="lib/jquery.getXPath.js"></script>
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-route.js"></script>
+    <script src="lib/angular/angular-resource.js"></script>
+    <script src="lib/angular/angular-animate.js"></script>
+
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-theme.css"/>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+
+    <link rel="stylesheet" href="css/app.css"/>
+
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/directives.js"></script>
+
+</head>
+<body ng-app="tutorialApp" class="my-app" ng-controller="NavigationController" ng-csp>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+        <div class="navbar-header navbar-brand">Tutorial on xpaths</div>
+        <div class='navbar-right'>
+            <span class='navbar-text header-desc '>Learn how to locate elements in an HTML document using xpath expressions</span>
+            <span class="btn glyphicon glyphicon-question-sign navbar-brand" data-toggle="modal"
+                  data-target="#helpModal"></span>
+        </div>
+    </div>
+</nav>
+
+<div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="helpModalLabel">Help</h4>
+            </div>
+            <div class="modal-body">
+                <div class="help-details">
+
+                    <table class="table table-bordered table-hover pre-scrollable">
+                        <tr>
+                            <td>Expression</td>
+                            <td>Description</td>
+                        </tr>
+                        <tr ng-repeat="line in help">
+                            <td>{{line.expression}}</td>
+                            <td>{{line.description}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+
+        <div ng-view></div>
+
+    </div>
+</div>
+
+<div>
+    <ul class="pager">
+        <li ng-class="{disabled: currentStep == firstStep}" id="previous-button">
+            <a href ng-click="goToPreviousStep()">« Previous</a>
+        </li>
+        <li ng-class="{disabled: currentStep == lastStep}" id="next-button">
+            <a href ng-click="goToNextStep()">Next »</a>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

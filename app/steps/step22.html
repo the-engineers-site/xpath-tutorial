@@ -1,0 +1,109 @@
+<div class="panel panel-default panel-info">
+    <div class="panel-heading">Positions <a href ng-click="goToHome()" class = "pull-right">Home</a></div>
+    <div class="panel-body">
+        <div class="col-lg-3">
+            <h3 class="lead text-primary">Step</h3>
+            <h4 id='guide'>{{getCurrentStep()}} of {{lastStep}}</h4>
+            <h4>Positions</h4>
+            <br/>
+
+            <p>
+                Positions are relative to what you have selected.
+                <b class="text-bold-blue">elem[n]</b> selects the <b>n'th</b> element <b>elem</b> in the current
+                context.
+                <br/><br/>
+
+                <b>Lets spice a bit the things.</b>
+                We've added two hidden rows. You have to select the same cell as on the previous step, but the xpath will suffer some changes, since you need to skip the hidden rows.<br><br>
+                You don't want to use index 4 when you select the row, because the cell seems to be located on row with index 2. Therefore, you want to isolate the rows you want to use
+                by eliminating the hidden ones.
+                <br><br><br>Use <b class="text-bold-blue">[n]</b> to select the cell in the table <b class="text-bold-blue">table</b>, under node <b class="text-bold-blue">tbody</b> identified by:<br><br>
+                    - <b class="text-bold-blue">tr</b> that:
+                        <div style = "text-indent: 2em;"> -> does not have an attribute <b class="text-bold-blue">class</b> that contains the value <b class="text-bold-blue">'prototype'</b></div>
+                        <div style = "text-indent: 2em;"> -> does not have an attribute <b class="text-bold-blue">class</b> that contains the value 'empty'</b></div>
+                        <div style = "text-indent: 2em;"> -> has <b class="text-bold-blue">index</b> equal to <b class="text-bold-blue">2</b></div> <br>
+                     - <b class="text-bold-blue">td</b> that has <b class="text-bold-blue">index</b> equal to <b class="text-bold-blue">4</b>
+                    <br><br>
+                    in the <b class="text-bold-black">current context</b>
+            </p>
+        </div>
+
+        <div class="col-lg-4 col-lg-offset-1">
+            <h3 class="lead text-primary"> Html source </h3>
+
+            <div id="output" html-visualizer expected-selection="expectedXpath" current-selection="xpath"
+                 is-match="match" source="{{htmlSourceId}}"></div>
+
+            <p class="text-purple">Scroll if necessary to see what you've selected!</p>
+
+            <div class="form-group" id="xpath-form">
+                <label>Type the xpath here:</label>
+                <input type="text" class="form-control long-input " ng-model="xpath" ng-class="validateXpath()"
+                       placeholder="Enter the xpath"/>
+            </div>
+
+            <p></p>
+
+            <div class="match" ng-show="match">Good job!</div>
+
+        </div>
+
+        <div class="col-lg-3 col-lg-offset-1">
+            <h3 class="lead text-primary"> Html view </h3>
+
+            <div id="test-example">
+
+                <table class="table table-condensed">
+                    <thead>
+                    <tr class = 'row'>
+                        <th>No</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>User Name</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class = "row prototype" style = "display: none"></tr>
+                    <tr class = "row empty" style = "display: none"></tr>
+                    <tr class = "row">
+                        <td>1</td>
+                        <td>Natasha</td>
+                        <td>Spring</td>
+                        <td>natasha_spring</td>
+                    </tr>
+                    <tr class = "row">
+                        <td>2</td>
+                        <td>John</td>
+                        <td>Summer</td>
+                        <td>john_summer</td>
+                    </tr>
+                    <tr class = "row">
+                        <td>3</td>
+                        <td>Mark</td>
+                        <td>Autumn</td>
+                        <td>mark_autumn</td>
+                    </tr>
+                    <tr class = "row">
+                        <td>4</td>
+                        <td>Suzie</td>
+                        <td>Winter</td>
+                        <td>suzie_winter</td>
+                    </tr>
+
+                    </tbody>
+                    <tr>
+
+                    </tr>
+                </table>
+
+            </div>
+
+            <br>
+
+            <p class="text-view">Write an xpath to select the highlighted objects in the form:
+
+            <p class="text-view-line-short">the cell from the <b>second row</b> under the <b>User Name</b> column.
+            </p>
+        </div>
+    </div>
+</div>

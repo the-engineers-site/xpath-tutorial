@@ -1,0 +1,75 @@
+
+<div class="panel panel-default panel-info">
+    <div class="panel-heading">Welcome</div>
+    <div class="panel-body">
+        <p> This tutorial is designed to help you understand the basics of xpaths. Its main goal is to faciliate the creation of the xpaths needed in the testing framework. </p>
+        <!--<p>Its main goal is to faciliate the creation of the xpaths needed in the testing framework.</p>-->
+        <p> The tutorial will take you through <b>{{lastStep}} steps</b> that will guide you in creating from very simple to more complex xpaths. </p>
+
+
+    <div class="col-lg-3">
+        <h3 class="lead text-primary"> Step</h3>
+        <h4 id='guide'># of {{lastStep}}</h4>
+        <h4>Content of the step</h4>
+        <br/>
+
+        <p>
+           You will find here the information that you need for completing the step.<br>
+           Read about the new expression that you will use in the creation of the xpath for this step.
+           Consider the guidelines and use the suggested expressions.
+        </p>
+    </div>
+
+
+    <div class="col-lg-4 col-lg-offset-1">
+        <h3 class="lead text-primary"> Html source </h3>
+        <p>
+            Here you will visualize the source of the html form that you will need to create xpaths for.
+            <br>The object(s) that you will need to select with the xpath will be highlighted in grey so you will know what to focus upon.
+        </p>
+        <p>
+
+        <br>When you will write a valid xpath, all the objects that your xpath refers to will be highlighted in blue.
+        <br>When the object(s) selected with your xpath match the given object(s) to be selected, it(they) will be highlighted in green color and you'll receive a message.
+        This is the moment you know you're done with the step.
+
+        </p>
+        <p>
+
+        <br>You will write your xpath in the below input.
+        <br>If you type an xpath that is invalid, it will change its color to red.
+        <br>If you type an xpath that is valid but does not match any node, nothing happens.
+
+        <div class="form-group" id="xpath-form">
+            <label>Type the xpath here:</label>
+            <input type="text" class="form-control long-input " ng-model="xpath" ng-class="validateXpath()"
+                   placeholder="Enter the xpath"/>
+        </div>
+
+        </p>
+
+        <div class="match" ng-show="match">Good job!</div>
+
+    </div>
+
+
+    <div class="col-lg-3  col-lg-offset-1"">
+        <h3 class="lead text-primary"> Html view </h3>
+        <p>
+            This is where you'll visualize the html section that you'll need to work on.
+            The object(s) that you need to select will be highlighted in grey so you will know what to focus upon.
+            <br><br>When the introduced xpath will match the expected object(s), it(they) will be highlighted in green color.
+        </p>
+    </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
